@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="weather-app">
+        <div id="location-message" class="location-message">
+            <h2>Do you want to share your location to see the weather?</h2>
+            <button id="allow-location">Allow Location</button>
+            <button id="deny-location">Deny</button>
+        </div>
+
+        <div class="w-layout-blockcontainer container w-container" id="weather_card" style="display: none;">
+            <div class="weather-card" id="weather_card">
+                <div class="weather-card-content">
+
+                    <div class="weather-left">
+                        <div class="weather-card-left">
+
+                            <div class="weather-card-header">
+                                <div class="weather-card-head">
+                                   <h2 id="weather-date"></h2>
+                                </div>
+                                <!--<div class="nav-more">
+                                    <i class='bx bx-list-ul'></i>
+                                </div>-->
+                            </div>
+                
+                            <div class="weather-card-body">
+                                <div class="weather-intensity">
+                                    <h3 id="weather-description"></h3>
+                                </div>
+                            </div>
+                
+                            <div class="weather-card-bottom">
+                                <div class="humid card">
+                                    <div class="small-card">
+                                    <div class="humid-card">
+                                        <i class='bx bx-water'></i>
+                                        <h4>HUMIDITY</h4>
+                                    </div>
+                                    <div class="card-value">
+                                        <h2 id="humidity"></h2>
+                                    </div>
+                                    <div class="humidity_describe">
+                                        <h3 id="humidity-described"></h3>
+                                    </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="feelslike card">
+                                    <div class="small-card">
+                                    <div class="humid-card">
+                                        <i class='bx bxs-thermometer'></i>
+                                        <h4>FEELS LIKE</h4>
+                                    </div>
+                                    <div class="card-value">
+                                        <h2 id="feels_like"></h2>
+                                    </div>
+                                    <div class="feelslike_describe">
+                                        <h3 id="feelslike-described"></h3>
+                                    </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="visibility card">
+                                    <div class="small-card">
+                                    <div class="humid-card">
+                                        <i class="fa-regular fa-eye"></i>
+                                        <h4>VISIBILITY</h4>
+                                    </div>
+                                    <div class="card-value">
+                                        <h2 id="visibility"></h2>
+                                    </div>
+                                    <div class="visibility_describe">
+                                        <h3 id="visibility-described"></h3>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="pressure card">
+                                    <div class="small-card">
+                                    <div class="humid-card">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                        <h4>PRESSURE</h4>
+                                    </div>
+                                    <div class="card-value">
+                                        <h2 id="pressure"></h2>
+                                    </div>
+                                    <div class="pressure_describe">
+                                        <h3 id="pressure-described"></h3>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                  
+                        </div>
+                         
+                                                     
+                    </div>
+                    
+                    <div class="weather-right">
+                        <div class="weather-card-right">
+                            <div class="weather-card-right-content">
+                                <div class="weather-right-top">
+                                    <div class="weather-card-caption-right">
+                                        <i class='bx bx-navigation'></i>
+                                        <h2 id="city_location"></h2>
+                                        <h2 id="country_name"></h2>
+                                    </div>
+                                    <div class="temperature-type">
+                                        <h1 id="temp_meter"></h1>
+                                    </div>
+                                    <div class="temp-range">
+                                        <div class="temp-high">
+                                            <h1 id="temp_high"></h1>
+                                        </div>
+                                        <div class="temp-low">
+                                            <h1 id="temp_low"></h1>
+                                        </div>
+                                    </div>
+                                    <div class="weather_base">
+                                        <h2 id="weather_type"></h2>
+                                    </div>
+                                </div>
+                                <div class="weather-right-body">
+                                    <div class="sunset-rise">
+                                        <div class="sunrisenSunset">
+                                            <h2 class="sun-title">Sunrise & Sunset</h2>
+                                        </div>
+                                        <div class="sunrise-card">
+                                            <div class="sunrise-content">
+                                                <div class="sunrise-title">
+                                                    <h3>Sunrise</h3>
+                                                </div>
+                                                <div class="sunrise-body">
+                                                    <div class="sunrise-icon">
+                                                        <!--<i class="fa-regular fa-sun" style="color: #FFD43B;"></i>-->
+                                                        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/sun-4596719-3796817.png?f=webp&w=256" alt="sunrise" height="30px">
+                                                        
+                                                    </div>
+                                                    <div class="sunrise-time">
+                                                        <h2 id="sunrise_time"></h2>
+                                                    </div>
+                                                    <!--<div class="sunrise-duration"></div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sunset-card">
+                                            <div class="sunset-content">
+                                                
+                                                <div class="sunset-title">
+                                                    <h3>Sunset</h3>
+                                                </div>
+                                                <div class="sunset-body">
+                                                    <div class="sunset-icon">
+                                                        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/sunset-9210603-7531337.png?f=webp&w=256" alt="sunset" height="30px">
+                                                    </div>
+                                                    <div class="sunset-time">
+                                                        <h2 id="sunset_time"></h2>
+                                                    </div>
+                                                    <!--<div class="sunset-duration"></div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wind">
+                                        <div class="wind-card">
+                                            <i class='bx bx-wind'></i>
+                                            <h4>WIND</h4>
+                                        </div>
+                                        <div class="wind-card-value">
+                                            <h4 id="wind_speed"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Weather Card -->
+    
+
+    <script src="index.js"></script>
+</body>
+</html>

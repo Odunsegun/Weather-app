@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    flex-direction: column;
+    max-width: 1400px;
+    margin-top: 2.5vh;
+    margin-bottom: 0;
+    padding: 0 0;
+}
+
+.w-layout-blockcontainer {
+    max-width: 1400px;
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
+    display: block;
+}
+
+.w-container {
+    max-width: 1400px;
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
+}
+
+.weather-card-content{
+    padding: 16px 16px;
+    display: flex;
+    height: 95vh;
+}
+/*Weather right*/
+.weather-right {
+    height: auto;
+    width: 24vw;
+    color: white; 
+    background: rgba(3, 12, 95, 0.4); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 20px; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
+    ; 
+    justify-content: center;
+}
+
+.weather-card-right{
+    padding: 16px 0px;
+}
+.weather-card-right-content{
+    display: grid; 
+    grid-template-columns: 1fr; 
+    padding: 16px;  
+}
+.weather-card-right-content > *:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
+    padding-bottom: 10px; 
+    margin-bottom: 5vh; 
+}
+.weather-right-top{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.weather-card-caption-right{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.temperature-type{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.temperature-type h1, h2{
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;  
+}
+.temperature-type h1{
+    font-size: 5em;
+}
+.temp-range{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.temp-high, 
+.temp-low{
+    padding: 0px 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for a more defined edge */
+}
+.temp-high h1, 
+.temp-low h1{
+    font-size: 20px;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+}
+
+.weather_base{
+    display: flex;
+    justify-content: center;
+}
+
+.weather-right-body{
+    justify-content: center;
+    align-items: center;
+}
+.sunset-rise{
+    display: grid;
+    gap: 1vh;
+}
+.sunrisenSunset{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.sunset-card,
+.sunrise-card{
+    padding: 0px 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for a more defined edge */
+}
+.sunset-content,
+.sunrise-content{
+    display: block;
+}
+.sun-title{
+    justify-content: center;
+}
+.sunrise-title h3,
+.sunset-title h3{
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+}
+.sunset-body,
+.sunrise-body{
+    display: flex;
+    justify-content: space-between;
+}
+.wind{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.wind-card h4{
+    font-size: 24px;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+.wind-card i{
+    font-size: 24px;
+    background: linear-gradient(135deg,  #add8e6, #030c5f);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+.wind-card{
+    display: flex;
+    gap: 5px;
+
+}
+.wind-card-value {
+    display: flex;
+    justify-content: center;
+}
+
+.wind-card-value h4{ 
+   font-size: 20px;
+   background: linear-gradient(135deg,  #add8e6, #030c5f);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+
+/*Weather left*/
+.weather-left{
+    width: 73vw;
+    padding: 16px;
+}
+.weather-card-left{ 
+    display: flex;
+    flex-direction: column;
+}
+#weather-date{
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+.weather-card-body{
+    margin-top: 50vh;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    padding: 0px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 2vh;
+
+}
+.weather-card-body h1{
+    font-size: 60px;
+}
+
+.weather-intensity h3{
+    font-size: 64px;
+    /* transform: rotate(-90deg);
+    right: 0; 
+    transform: translateY(-50%) rotate(-90deg); Adjust for the rotated position */
+    margin: 0;
+    display: flex;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+.weather-card-bottom{
+    margin-top: 2vh;
+    padding-right: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 2 equal columns */
+    grid-gap: 2vh;
+}
+
+.small-card i{
+    color: white;
+}
+
+
+.card{
+    padding: 5vh 2vw;
+    height: 20vh;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for a more defined edge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.small-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.humid-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vh;
+}
+.weather-card-bottom h4,
+.weather-card-bottom h2,
+.weather-card-bottom h3
+{
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    white-space: nowrap;
+}
+.weather-card-bottom h2{
+    font-size: 36px;
+}
+.weather-card-bottom h3{
+    margin-top: 32px;
+    font-size: 16px;
+}
+
+
+
+
+
+.error-message { 
+    color: red; font-size: 18px; 
+}
+.weather-card {
+    height: auto;
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    /*justify-content: center;
+    align-items: center;
+    display: flex;*/
+}
+
+.weather-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-card-head{
+    display: block;
+}
+
+
+
+.weather-card-caption i{
+    font-size: 18px;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+.weather-card-caption h2{
+    font-size: 30px;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+
+
+.nav-more i{
+    font-size: 36px;
+    background: linear-gradient(135deg, #ffffff, #add8e6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+
+
+
+
+
+
+
+
+.card-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.card-value h4{
+    
+   font-size: 20px;
+}
+
+.location-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.location-message h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #add8e6, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.location-message button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.location-message button:hover {
+    background-color: #3949ab;
+}
